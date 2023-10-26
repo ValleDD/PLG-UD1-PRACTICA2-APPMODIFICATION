@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
       borderColor: "black",
       alignItems: "center",
       justifyContent: "space-between",
-      height: "85%",
+      flex: 9,
     },
     CenterQR: {
       justifyContent: "center",
