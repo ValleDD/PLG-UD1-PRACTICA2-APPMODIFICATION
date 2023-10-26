@@ -5,7 +5,7 @@ interface HeaderProps{
     setDisplayMyQR: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Header: React.FC<HeaderProps> = ({setDisplayMyQR}){
+const Header: React.FC<HeaderProps> = ({setDisplayMyQR})=>{
   return (
     <View style={styles.topContainer}>
       <Text style={styles.firstTopRowContainer}>My Portfolio App</Text>
