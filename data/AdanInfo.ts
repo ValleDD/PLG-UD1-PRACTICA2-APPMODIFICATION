@@ -1,6 +1,4 @@
-export type CardData = {
-    text: string,
-}
+import { CardData } from "./CardType";
 
 export const cardsData: CardData[] = [
     {
