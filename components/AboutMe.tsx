@@ -1,5 +1,7 @@
 import React from "react";
 import {StyleSheet, Text, ScrollView, Image, View } from 'react-native'
+import { CardData, cardsData } from '../data/Card'
+import Card from "./Card";
 
 const AboutMe = () => {
   return (
@@ -46,18 +48,14 @@ const AboutMe = () => {
           cosas que me gustan mucho:
         </Text>
         <ScrollView style={{ ...{ padding: 10 }, ...styles.thinsILikeALot }}>
-          <Text>Salir a pasear</Text>
-          <Text>Senderismo</Text>
-          <Text>Ir a la playita</Text>
-          <Text>Domingos de misa</Text>
-          <Text>La guitarrita</Text>
-          <Text>El monte con lluvia</Text>
-          <Text>Viajar</Text>
-          <Text>Música variadita</Text>
-          <Text>Anime</Text>
-          <Text>Ducharme</Text>
-          <Text>Videojuegos</Text>
-          <Text>Ir de cenar romántica</Text>
+          {
+            cardsData.map((card: CardData , index: number) =>
+            <Card
+              text={card.text}
+              key={index}
+            ></Card>  
+            )
+          }
         </ScrollView>
       </View>
     </View>
