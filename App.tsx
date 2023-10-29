@@ -8,7 +8,7 @@ import { cardsData as valleData } from './data/ValleInfo'
 export default function App() {
   const [isValleProfile, setIsValleProfile] = useState(true);
   const adanImage : ImageProps = require('./assets/adan.jpeg')
-  const valleImage : ImageProps = require('./assets/valle.jpeg')
+  const valleImage : ImageProps = require('./assets/valle.jpg')
   const valleQRRoute: string = 'https://github.com/ValleDD'
   const adanQRRoute: string = 'https://github.com/adansif'
   return (

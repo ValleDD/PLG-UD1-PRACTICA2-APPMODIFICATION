@@ -2,31 +2,28 @@ import { CardData } from "./CardType";
 
 export const cardsData: CardData[] = [
     {
-        text: 'Hola'
+        text: 'Cubo Rubick'
     },
     {
-        text: 'Senderismo'
+        text: 'Acampadas'
     },
     {
-        text: 'Ir a la playita'
+        text: 'Estar con la familia'
     },
     {
-        text: 'Domingos de misa'
+        text: 'Cocinar'
     },
     {
-        text: 'La guitarrita'
+        text: 'El monte con frio'
     },
     {
-        text: 'El monte con lluvia'
-    },
-    {
-        text: 'Viajar'
+        text: 'Ir a comer papas locas'
     },
     {
         text: 'Música variadita'
     },
     {
-        text: 'Anime'
+        text: 'Series'
     },
     {
         text: 'Ducharme'
