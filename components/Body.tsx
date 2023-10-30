@@ -53,7 +53,7 @@ const Body: React.FC<BodyProps> = ({
             />
           </Pressable>
         </View>
-        <View>
+        <View >
           {displayAboutMe ? <CardList cardsData={cardsData} /> : <QR QRRoute={QRRoute} />}
         </View>
       </View>
