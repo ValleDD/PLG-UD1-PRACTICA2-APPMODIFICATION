@@ -22,7 +22,7 @@ const Body: React.FC<BodyProps> = ({
   cardsData: cardsData,
   profileData: profileData,
 }) => {
-  const [displayAboutMe, setDisplayAboutMe] = useState(Boolean);
+  const [displayAboutMe, setDisplayAboutMe] = useState(true);
   return (
     <View style={[styles.body, (isLightMode? styles.backgroundLight: styles.backgroundDark)]}>
       <View>
@@ -38,7 +38,7 @@ const Body: React.FC<BodyProps> = ({
             />
           </View>
         </View>
-        <View style={styles.infoOptions}>
+         <View style={styles.infoOptions}>
           <Pressable
             style={{ width: "35%" }}
             onPress={() => setDisplayAboutMe(true)}
@@ -52,13 +52,13 @@ const Body: React.FC<BodyProps> = ({
             <Card text={"Github QR"} />
           </Pressable>
         </View>
-        <View style={(displayAboutMe? styles.cardContainerList : styles.cardQRList)}>
+        {<View style={(displayAboutMe? styles.cardContainerList : styles.cardQRList)}>
           {displayAboutMe ? (
             <CardList cardsData={cardsData} />
           ) : (
             <QR QRRoute={profileData.QRRoute} />
           )}
-        </View>
+        </View>}
       </View>
     </View>
   );
@@ -67,7 +67,6 @@ const Body: React.FC<BodyProps> = ({
 const styles = StyleSheet.create({
   body: {
     width: "100%",
-    flex: 1,
   },
   backgroundLight:{
     backgroundColor: "#43D6F5",
@@ -110,7 +109,7 @@ const styles = StyleSheet.create({
   },
   cardContainerList: {
     justifyContent: "center",
-    height: "70%",
+    height: "60%",
     width: "100%",
   },
   cardQRList: {
