@@ -1,4 +1,9 @@
-import { CardData } from "./CardType";
+import { CardData, ProfileData } from "./CardTypes";
+
+export const profileData: ProfileData = {
+    QRRoute: 'https://github.com/ValleDD',
+    image: require('../assets/valle.jpg')
+}
 
 export const cardsData: CardData[] = [
     {

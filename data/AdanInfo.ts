@@ -1,4 +1,9 @@
-import { CardData } from "./CardType";
+import { CardData, ProfileData } from "./CardTypes";
+
+export const profileData: ProfileData = {
+    QRRoute: 'https://github.com/Adansif',
+    image: require('../assets/adan.jpeg')
+}
 
 export const cardsData: CardData[] = [
     {

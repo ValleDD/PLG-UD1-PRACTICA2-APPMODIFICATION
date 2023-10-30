@@ -1,12 +1,14 @@
 import React from "react";
 import { Button, Pressable, Text, View, StyleSheet } from "react-native";
 
+type HeaderProps = {
+  headerText : string
+}
 
-
-const Header = () => {
+const Header: React.FC<HeaderProps> = ({headerText: headerText}) => {
   return (
     <View style={styles.topContainer}>
-      <Text style={styles.firstTopRowContainer}>My Portfolio App</Text>
+      <Text style={styles.firstTopRowContainer}>{headerText}</Text>
       
     </View>
   );

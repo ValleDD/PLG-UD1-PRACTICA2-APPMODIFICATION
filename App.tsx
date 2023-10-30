@@ -2,34 +2,28 @@ import { useState } from "react";
 import { ImageProps, StyleSheet, View } from "react-native";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { cardsData as adanData } from './data/AdanInfo'
-import { cardsData as valleData } from './data/ValleInfo'
+import { cardsData as adanCardData, profileData as adanProfileData} from './data/AdanInfo'
+import { cardsData as valleCardData,  profileData as valleProfileData} from './data/ValleInfo'
 
 export default function App() {
   const [isValleProfile, setIsValleProfile] = useState(true);
-  const adanImage : ImageProps = require('./assets/adan.jpeg')
-  const valleImage : ImageProps = require('./assets/valle.jpg')
-  const valleQRRoute: string = 'https://github.com/ValleDD'
-  const adanQRRoute: string = 'https://github.com/adansif'
   return (
     <View style={styles.container}>
-      <Header/>
+      {(isValleProfile)? <Header headerText={'Valle Portfolio'}/> : <Header headerText={'Adán Portfolio'}/>}
       <View style={styles.body}>
       {isValleProfile ? (
         <Body 
           setIsValleProfile={setIsValleProfile}
           isValleProfile={isValleProfile}
-          avatarImage={valleImage}
-          cardsData={valleData} 
-          QRRoute={valleQRRoute}/>
+          cardsData={valleCardData} 
+          profileData={valleProfileData}/>
           
       ) : (
         <Body 
             setIsValleProfile={setIsValleProfile}
             isValleProfile={isValleProfile}
-            avatarImage={adanImage}
-            cardsData={adanData} 
-            QRRoute={adanQRRoute}/>
+            cardsData={adanCardData} 
+            profileData={adanProfileData}/>
         )}
       </View>
     </View>
