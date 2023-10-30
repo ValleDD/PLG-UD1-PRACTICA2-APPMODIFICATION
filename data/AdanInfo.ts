@@ -2,39 +2,30 @@ import { CardData } from "./CardType";
 
 export const cardsData: CardData[] = [
     {
-        text: 'Salir a pasear'
+        text: 'Los dinosaurios'
     },
     {
-        text: 'Senderismo'
+        text: 'Comer'
     },
     {
-        text: 'Ir a la playita'
+        text: 'Jugar a rugby'
     },
     {
-        text: 'Domingos de misa'
-    },
-    {
-        text: 'La guitarrita'
-    },
-    {
-        text: 'El monte con lluvia'
-    },
-    {
-        text: 'Viajar'
-    },
-    {
-        text: 'Música variadita'
-    },
-    {
-        text: 'Anime'
-    },
-    {
-        text: 'Ducharme'
+        text: 'Tocar la batería'
     },
     {
         text: 'Videojuegos'
     },
     {
-        text: 'Ir de cenar romántica'
+        text: 'Salir de fiesta'
+    },
+    {
+        text: 'Programar videojuegos'
+    },
+    {
+        text: 'Música rock'
+    },
+    {
+        text: 'Anime'
     },
 ]
