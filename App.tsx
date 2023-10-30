@@ -7,13 +7,25 @@ import { cardsData as valleCardData,  profileData as valleProfileData} from './d
 
 export default function App() {
   const [isValleProfile, setIsValleProfile] = useState(true);
+  const [isLightMode, setIsLightMode] = useState(true)
   return (
     <View style={styles.container}>
-      {(isValleProfile)? <Header headerText={'Valle Portfolio'}/> : <Header headerText={'Adán Portfolio'}/>}
+      {(isValleProfile)? 
+        <Header 
+          setIsLightMode={setIsLightMode} 
+          isLightMode={isLightMode} 
+          headerText={'Valle Portfolio'}/> 
+        : 
+        <Header 
+          setIsLightMode={setIsLightMode} 
+          isLightMode={isLightMode} 
+          headerText={'Adán Portfolio'}/>}
+        
       <View style={styles.body}>
       {isValleProfile ? (
         <Body 
           setIsValleProfile={setIsValleProfile}
+          isLightMode={isLightMode}
           isValleProfile={isValleProfile}
           cardsData={valleCardData} 
           profileData={valleProfileData}/>
@@ -21,6 +33,7 @@ export default function App() {
       ) : (
         <Body 
             setIsValleProfile={setIsValleProfile}
+            isLightMode={isLightMode}
             isValleProfile={isValleProfile}
             cardsData={adanCardData} 
             profileData={adanProfileData}/>
@@ -33,7 +46,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
   body:{
     flex:20

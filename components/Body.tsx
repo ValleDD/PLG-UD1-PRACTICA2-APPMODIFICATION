@@ -8,7 +8,8 @@ import QR from "./QR";
 import { CardData, ProfileData } from "../data/CardTypes";
 
 interface BodyProps {
-  setIsValleProfile: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsValleProfile: React.Dispatch<React.SetStateAction<boolean>>
+  isLightMode: boolean
   isValleProfile: boolean;
   cardsData: CardData[];
   profileData: ProfileData;
@@ -16,22 +17,23 @@ interface BodyProps {
 
 const Body: React.FC<BodyProps> = ({
   setIsValleProfile: setIsValleProfile,
+  isLightMode: isLightMode,
   isValleProfile: isValleProfile,
   cardsData: cardsData,
   profileData: profileData,
 }) => {
   const [displayAboutMe, setDisplayAboutMe] = useState(Boolean);
   return (
-    <View style={styles.body}>
+    <View style={[styles.body, (isLightMode? styles.backgroundLight: styles.backgroundDark)]}>
       <View>
         <View>
-          <Image style={styles.avatar} source={profileData.image}></Image>
-          <View style={styles.iconView}>
+          <Image style={[styles.avatar, (isLightMode? styles.borderColorLight: styles.borderColorDark)]} source={profileData.image}></Image>
+          <View style={[styles.iconView, (isLightMode? styles.borderColorLight : styles.borderColorDark), (isLightMode? {backgroundColor: 'white'}: {backgroundColor: 'black'})]}>
             <Ionicons
               name="reload-outline"
               size={30}
               style={styles.icon}
-              color={"black"}
+              color={(isLightMode? 'black' : 'white')}
               onPress={() => setIsValleProfile(!isValleProfile)}
             />
           </View>
@@ -65,15 +67,25 @@ const Body: React.FC<BodyProps> = ({
 const styles = StyleSheet.create({
   body: {
     width: "100%",
-    backgroundColor: "#43D6F5",
     flex: 1,
+  },
+  backgroundLight:{
+    backgroundColor: "#43D6F5",
+  },
+  backgroundDark:{
+    backgroundColor: "#232D3F",
+  },
+  borderColorLight: {
+    borderColor: "#fff",
+  },
+  borderColorDark: {
+    borderColor: "#000000",
   },
   avatar: {
     height: 180,
     width: 180,
     borderRadius: 100,
     borderWidth: 10,
-    borderColor: "#fff",
     marginTop: 20,
     marginBottom: -40,
     alignSelf: "center",
@@ -83,10 +95,8 @@ const styles = StyleSheet.create({
     height: 40,
     alignSelf: "center",
     marginBottom: 40,
-    backgroundColor: "#fff",
     borderRadius: 100,
     borderWidth: 3,
-    borderColor: "#fff",
     justifyContent: "center",
   },
   icon: {
@@ -94,19 +104,16 @@ const styles = StyleSheet.create({
   },
   infoOptions: {
     flexDirection: "row",
-    backgroundColor: "#43D6F5",
     justifyContent: "space-around",
     alignItems: "center",
     zIndex: 1, //This is for the shadow box to be visible and not be blocked by the CardList
   },
   cardContainerList: {
-    backgroundColor: "#43D6F5",
     justifyContent: "center",
     height: "70%",
     width: "100%",
   },
   cardQRList: {
-    backgroundColor: "#43D6F5",
     justifyContent: "center",
     height: "50%",
     width: "100%",
