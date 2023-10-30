@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 
-type CardProps = {
+interface CardProps {
     text: string
 }
 
